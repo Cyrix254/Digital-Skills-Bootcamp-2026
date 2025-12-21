@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react'; // Added useEffect
+import React, { useState, useEffect } from 'react';
 import myPhoto from './reagan.jpg';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // State to hide indicator on scroll
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
-  // Hide the scroll indicator when the user starts scrolling
+  // Handle scroll to hide indicator
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsVisible(false);
+      if (window.scrollY > 100) {
+        setShowScrollIndicator(false);
       } else {
-        setIsVisible(true);
+        setShowScrollIndicator(true);
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -37,6 +38,7 @@ const App = () => {
             <div className="flex-shrink-0 flex items-center">
               <span className="text-2xl font-bold text-blue-800">Cyrix<span className="text-yellow-500">Tech</span></span>
             </div>
+            
             <div className="hidden md:flex space-x-8 items-center">
               {navLinks.map((link) => (
                 <a key={link.name} href={link.href} className="text-gray-600 hover:text-blue-800 font-medium transition">
@@ -48,15 +50,17 @@ const App = () => {
                 Register Now
               </a>
             </div>
+
             <div className="md:hidden flex items-center">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-blue-800 focus:outline-none">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />}
+                  {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16m-7 6h7" />}
                 </svg>
               </button>
             </div>
           </div>
         </div>
+
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
             {navLinks.map((link) => (
@@ -70,10 +74,11 @@ const App = () => {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-blue-900 to-blue-800 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="relative min-h-screen pt-32 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-blue-900 to-blue-800 text-white overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2 text-center md:text-left animate-fade-in">
+            <div className="md:w-1/2 text-center md:text-left">
+              
               <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/50 px-4 py-2 rounded-full mb-6">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
@@ -83,6 +88,7 @@ const App = () => {
                   Enrollment Open: January — April 2026
                 </span>
               </div>
+
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
                 Modern Digital Skills <span className="text-yellow-400">Bootcamp 2026</span>
               </h1>
@@ -94,10 +100,11 @@ const App = () => {
                   Register Now — KSh 1,500/month
                 </a>
               </div>
-              <p className="text-blue-100 text-lg font-medium mt-6 italic opacity-80">
+              <p className="text-blue-100 text-2xl font-medium mt-6">
                 Training Duration: 2 months (May–July)
               </p>
             </div>
+
             <div className="md:w-1/2 relative">
               <div className="relative z-10 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img src={myPhoto} alt="Reagan Tzisaga" className="w-full h-auto object-cover" />
@@ -111,14 +118,24 @@ const App = () => {
           </div>
         </div>
 
-        {/* --- SCROLL INDICATOR --- */}
-        <div className={`absolute bottom-10 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <a href="#about" className="flex flex-col items-center gap-2 group">
-            <span className="text-xs uppercase tracking-widest text-blue-200 font-bold group-hover:text-yellow-400 transition-colors">Explore</span>
-            <div className="w-6 h-10 border-2 border-blue-200 rounded-full flex justify-center p-1 group-hover:border-yellow-400 transition-colors">
-              <div className="w-1 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-            </div>
-          </a>
+        {/* --- ANIMATED SCROLL INDICATOR --- */}
+        <div 
+          className={`fixed bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 transition-opacity duration-500 z-40 ${showScrollIndicator ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        >
+          <span className="text-yellow-400 font-bold text-sm tracking-widest uppercase animate-pulse">
+            Scroll to Explore
+          </span>
+          <svg 
+            className="w-6 h-6 text-white animate-bounce" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
         </div>
       </section>
 
@@ -148,6 +165,7 @@ const App = () => {
       <section id="curriculum" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-16">The Training Roadmap</h2>
+          
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-3xl shadow-sm border-t-8 border-blue-800 relative overflow-hidden">
               <span className="absolute top-4 right-4 text-6xl font-black text-gray-100">01</span>
@@ -160,6 +178,7 @@ const App = () => {
                 ))}
               </ul>
             </div>
+
             <div className="bg-white p-8 rounded-3xl shadow-sm border-t-8 border-yellow-500 relative overflow-hidden">
               <span className="absolute top-4 right-4 text-6xl font-black text-gray-100">02</span>
               <h3 className="text-2xl font-bold text-blue-800 mb-6 underline decoration-blue-800 underline-offset-8">Digital Marketing & AI</h3>
@@ -179,7 +198,7 @@ const App = () => {
       <section id="instructor" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-blue-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row items-center">
-            <div className="lg:w-1/3 h-full">
+            <div className="lg:w-1/3 h-full min-h-[400px]">
               <img src={myPhoto} alt="Reagan Tzisaga" className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
             </div>
             <div className="lg:w-2/3 p-8 lg:p-16 text-white">
