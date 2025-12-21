@@ -122,11 +122,11 @@ const App = () => {
         <div 
           className={`fixed bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 transition-opacity duration-500 z-40 ${showScrollIndicator ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
-          <span className="text-yellow-400 font-bold text-sm tracking-widest uppercase animate-pulse">
+          <span className="text-yellow-400 font-bold text-2xl tracking-widest uppercase animate-pulse">
             Scroll to Explore
           </span>
           <svg 
-            className="w-6 h-6 text-white animate-bounce" 
+            className="w-12 h-12 text-white animate-bounce" 
             fill="none" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
