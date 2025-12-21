@@ -75,7 +75,7 @@ const App = () => {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
                 </span>
                 <span className="text-yellow-400 font-bold tracking-wide uppercase text-sm">
-                  Enrollment Open: May — July 2026
+                  Enrollment Open: January — April 2026
                 </span>
               </div>
 
@@ -89,6 +89,10 @@ const App = () => {
                 <a href={registrationLink} className="w-full sm:w-auto px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold rounded-xl transition-all transform hover:scale-105 shadow-2xl text-center">
                   Register Now — KSh 1,500/month
                 </a>
+                <p className="text-blue-100 text-2xl font-medium mt-2">
+                Training Duration: 2 months (May–July)
+                </p>
+
               </div>
             </div>
             <div className="md:w-1/2 relative">
