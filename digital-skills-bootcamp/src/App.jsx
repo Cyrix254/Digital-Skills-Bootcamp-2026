@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // Added useEffect
 import myPhoto from './reagan.jpg';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // State to hide indicator on scroll
+
+  // Hide the scroll indicator when the user starts scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const registrationLink = "https://forms.gle/your-form-link";
 
-  // Navigation Links for smooth scroll
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Curriculum', href: '#curriculum' },
@@ -24,8 +37,6 @@ const App = () => {
             <div className="flex-shrink-0 flex items-center">
               <span className="text-2xl font-bold text-blue-800">Cyrix<span className="text-yellow-500">Tech</span></span>
             </div>
-            
-            {/* Desktop Nav */}
             <div className="hidden md:flex space-x-8 items-center">
               {navLinks.map((link) => (
                 <a key={link.name} href={link.href} className="text-gray-600 hover:text-blue-800 font-medium transition">
@@ -37,8 +48,6 @@ const App = () => {
                 Register Now
               </a>
             </div>
-
-            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-blue-800 focus:outline-none">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,8 +57,6 @@ const App = () => {
             </div>
           </div>
         </div>
-
-        {/* Mobile Dropdown */}
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
             {navLinks.map((link) => (
@@ -63,12 +70,10 @@ const App = () => {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-blue-900 to-blue-800 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-blue-900 to-blue-800 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 text-center md:text-left animate-fade-in">
-              
-              {/* UPDATED DATE INDICATOR */}
               <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/50 px-4 py-2 rounded-full mb-6">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
@@ -78,7 +83,6 @@ const App = () => {
                   Enrollment Open: January — April 2026
                 </span>
               </div>
-
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
                 Modern Digital Skills <span className="text-yellow-400">Bootcamp 2026</span>
               </h1>
@@ -89,11 +93,10 @@ const App = () => {
                 <a href={registrationLink} className="w-full sm:w-auto px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold rounded-xl transition-all transform hover:scale-105 shadow-2xl text-center">
                   Register Now — KSh 1,500/month
                 </a>
-                <p className="text-blue-100 text-2xl font-medium mt-2">
-                Training Duration: 2 months (May–July)
-                </p>
-
               </div>
+              <p className="text-blue-100 text-lg font-medium mt-6 italic opacity-80">
+                Training Duration: 2 months (May–July)
+              </p>
             </div>
             <div className="md:w-1/2 relative">
               <div className="relative z-10 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
@@ -106,6 +109,16 @@ const App = () => {
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -z-1"></div>
             </div>
           </div>
+        </div>
+
+        {/* --- SCROLL INDICATOR --- */}
+        <div className={`absolute bottom-10 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+          <a href="#about" className="flex flex-col items-center gap-2 group">
+            <span className="text-xs uppercase tracking-widest text-blue-200 font-bold group-hover:text-yellow-400 transition-colors">Explore</span>
+            <div className="w-6 h-10 border-2 border-blue-200 rounded-full flex justify-center p-1 group-hover:border-yellow-400 transition-colors">
+              <div className="w-1 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -135,9 +148,7 @@ const App = () => {
       <section id="curriculum" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-16">The Training Roadmap</h2>
-          
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Month 1 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border-t-8 border-blue-800 relative overflow-hidden">
               <span className="absolute top-4 right-4 text-6xl font-black text-gray-100">01</span>
               <h3 className="text-2xl font-bold text-blue-800 mb-6 underline decoration-yellow-500 underline-offset-8">Frontend Web Development</h3>
@@ -149,8 +160,6 @@ const App = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Month 2 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border-t-8 border-yellow-500 relative overflow-hidden">
               <span className="absolute top-4 right-4 text-6xl font-black text-gray-100">02</span>
               <h3 className="text-2xl font-bold text-blue-800 mb-6 underline decoration-blue-800 underline-offset-8">Digital Marketing & AI</h3>
