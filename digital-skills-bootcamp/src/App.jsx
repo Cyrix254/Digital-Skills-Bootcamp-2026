@@ -19,7 +19,7 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const registrationLink = "https://forms.gle/your-form-link";
+  const registrationLink = "https://forms.gle/fVQE5N1iXEKXBkm77";
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -161,7 +161,7 @@ const App = () => {
               <span className="absolute top-4 right-4 text-6xl font-black text-gray-100">01</span>
               <h3 className="text-2xl font-bold text-blue-800 mb-6 underline decoration-yellow-500 underline-offset-8">Frontend Web Development</h3>
               <ul className="space-y-4">
-                {['HTML5 Fundamentals', 'CSS3 & Responsive Design', 'Bootstrap 5 Framework', 'JavaScript Basics', 'Building & Deploying Live Sites'].map((item) => (
+                {['HTML5 Fundamentals', 'CSS3 & Responsive Design', 'Bootstrap 5 Framework', 'JavaScript Basics & React.js Fundamentals', 'Building & Deploying Live Sites'].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="text-green-500 font-bold">✓</span> {item}
                   </li>
@@ -236,9 +236,9 @@ const App = () => {
       <section className="py-20 bg-yellow-500">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Don’t Wait for the Future. Build It.</h2>
-          <p className="text-xl text-blue-800 mb-10 font-medium">Limited slots available for the May – July 2026 cohort. Registration closes soon!</p>
+          <p className="text-xl text-blue-800 mb-10 font-medium">Limited spots available for the May – July 2026 cohort. Registration closes on 30th April</p>
           <a href={registrationLink} target="_blank" rel="noreferrer" className="inline-block bg-blue-900 text-white text-2xl font-bold px-12 py-5 rounded-2xl shadow-2xl hover:bg-black transition-all transform hover:-translate-y-1">
-            Secure My Slot Now
+            Secure Your Spot Now
           </a>
         </div>
       </section>
@@ -248,7 +248,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
           <div>
             <h3 className="text-2xl font-bold mb-4 text-yellow-500">Cyrix Digital Solutions</h3>
-            <p className="text-blue-200">Empowering professionals with modern digital skills in Kenya and beyond.</p>
+            <p className="text-blue-200">Empowering Digital Growth.</p>
           </div>
           <div>
             <h4 className="font-bold mb-4">Contact Info</h4>
