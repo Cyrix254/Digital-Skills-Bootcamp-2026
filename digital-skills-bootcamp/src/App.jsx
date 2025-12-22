@@ -36,7 +36,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <div className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-800">Cyrix<span className="text-yellow-500">Tech</span></span>
+              <span className="text-2xl font-bold text-blue-800">Cyrix<span className="text-yellow-500">Bootcamp 2026</span></span>
             </div>
             
             <div className="hidden md:flex space-x-8 items-center">
@@ -109,7 +109,7 @@ const App = () => {
               <div className="relative z-10 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
                 <img src={myPhoto} alt="Reagan Tzisaga" className="w-full h-auto object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 bg-blue-900/80 backdrop-blur-md p-4 text-center">
-                  <p className="text-yellow-400 font-bold text-lg">Reagan Tzisaga</p>
+                  <p className="text-yellow-400 font-bold text-lg">Cyrix Ray</p>
                   <p className="text-xs uppercase tracking-widest text-blue-100">Lead Instructor</p>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">Master the Skills of the Future</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            This bootcamp is specifically designed for <strong>beginners with zero coding experience</strong>. We bridge the gap between education and the job market by focusing on practical, hands-on learning.
+          Zero experience? No problem. This bootcamp is your fast track to the digital workforce. We’ve bridged the gap between theory and industry reality, combining <strong>Web Development, Digital Marketing,</strong> and <strong>AI</strong> into one powerhouse curriculum. Stop wondering 'how' and start building 'now' with real-world projects designed to turn beginners into digital professionals.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
@@ -203,9 +203,10 @@ const App = () => {
             </div>
             <div className="lg:w-2/3 p-8 lg:p-16 text-white">
               <h4 className="text-yellow-400 font-bold tracking-widest uppercase mb-2">Lead Mentor</h4>
-              <h2 className="text-4xl font-bold mb-6">Reagan Tzisaga</h2>
+              <h2 className="text-4xl font-bold mb-6">Cyrix Ray</h2>
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                Founder of <strong>Cyrix Technologies</strong>, Reagan is a seasoned technologist committed to empowering the next generation of Kenyan creatives. With deep expertise in full-stack development and digital strategy, his teaching style is focused on mentorship and real-world results.
+               As the Founder of <strong>Cyrix Digital Solutions</strong>, Cyrix Ray is driven by a mission to make digital skills accessible, practical, and empowering.
+                His teaching approach goes beyond coding—combining real-world projects, mentorship, and modern digital strategies to help beginners grow from uncertainty into confident creators ready for the digital economy.
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Web Development', 'Graphic Design', 'Digital Marketing', 'AI Tools'].map(skill => (
@@ -232,7 +233,7 @@ const App = () => {
               <li className="flex items-center gap-3"><span className="text-blue-800">●</span> Live Virtual Classes</li>
               <li className="flex items-center gap-3"><span className="text-blue-800">●</span> Class Video Recordings</li>
               <li className="flex items-center gap-3"><span className="text-blue-800">●</span> WhatsApp Support Group</li>
-              <li className="flex items-center gap-3"><span className="text-blue-800">●</span> Certificate of Completion</li>
+
             </ul>
             <a href={registrationLink} className="block w-full bg-blue-800 text-white font-bold py-4 rounded-xl hover:bg-blue-900 transition text-center">
               Get Started Now
@@ -245,9 +246,9 @@ const App = () => {
       <section className="py-20 bg-yellow-500">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-extrabold text-blue-900 mb-6">Don’t Wait for the Future. Build It.</h2>
-          <p className="text-xl text-blue-800 mb-10 font-medium">Limited spots available for the May – July 2026 cohort. Registration closes soon!</p>
+          <p className="text-xl text-blue-800 mb-10 font-medium">Limited slots available for the May – July 2026 cohort. Registration closes soon!</p>
           <a href={registrationLink} target="_blank" rel="noreferrer" className="inline-block bg-blue-900 text-white text-2xl font-bold px-12 py-5 rounded-2xl shadow-2xl hover:bg-black transition-all transform hover:-translate-y-1">
-            Secure My Spot Now
+            Secure My Slot Now
           </a>
         </div>
       </section>
@@ -256,7 +257,7 @@ const App = () => {
       <footer className="bg-blue-950 text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-yellow-500">Cyrix Technologies</h3>
+            <h3 className="text-2xl font-bold mb-4 text-yellow-500">Cyrix Digital Solutions</h3>
             <p className="text-blue-200">Empowering professionals with modern digital skills in Kenya and beyond.</p>
           </div>
           <div>
@@ -266,17 +267,10 @@ const App = () => {
               <li>Email: cyrix0915@gmail.com</li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-bold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <span className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-500 hover:text-blue-900 transition">FB</span>
-              <span className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-500 hover:text-blue-900 transition">TW</span>
-              <span className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-500 hover:text-blue-900 transition">IG</span>
-            </div>
-          </div>
+          
         </div>
         <div className="text-center text-blue-400 text-sm">
-          &copy; {new Date().getFullYear()} Cyrix Technologies &mdash; All Rights Reserved
+          &copy; {new Date().getFullYear()} Cyrix Digital Solutions &mdash; All Rights Reserved
         </div>
       </footer>
     </div>
