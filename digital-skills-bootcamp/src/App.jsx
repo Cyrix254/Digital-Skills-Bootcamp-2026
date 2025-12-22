@@ -101,7 +101,7 @@ const App = () => {
                 </a>
               </div>
               <p className="text-blue-100 text-2xl font-medium mt-6">
-                Training Duration: 2 months (May–July)
+                Training Duration: 2 months (May_June,2026)
               </p>
             </div>
 
