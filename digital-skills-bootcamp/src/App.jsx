@@ -24,6 +24,7 @@ const App = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Curriculum', href: '#curriculum' },
+    { name: 'Requirements', href: '#requirements' }, // Added to Nav
     { name: 'Instructor', href: '#instructor' },
     { name: 'Pricing', href: '#pricing' },
   ];
@@ -101,7 +102,7 @@ const App = () => {
                 </a>
               </div>
               <p className="text-blue-100 text-2xl font-medium mt-6">
-                Training Duration: 2 months (May_June,2026)
+                Training Duration: 2 months (May—June, 2026)
               </p>
             </div>
 
@@ -184,8 +185,37 @@ const App = () => {
         </div>
       </section>
 
+      {/* --- REQUIREMENTS SECTION (NEW) --- */}
+      <section id="requirements" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">What You Need to Join</h2>
+            <p className="text-gray-600 mt-4">Make sure you have these ready before we begin in May.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Laptop/PC", desc: "At least 4GB RAM & working webcam", icon: "💻" },
+              { title: "Stable Internet", desc: "Reliable connection for live sessions", icon: "🌐" },
+              { title: "VS Code", desc: "Installed Visual Studio Code editor", icon: "📝" },
+              { title: "Node.js", desc: "Latest LTS version installed", icon: "⚙️" },
+              { title: "WhatsApp", desc: "Active account for the support group", icon: "📱" },
+              { title: "Modern Browser", desc: "Latest Chrome or Brave installed", icon: "🔥" },
+              { title: "Zoom/Google Meet", desc: "For attending virtual live classes", icon: "🎥" },
+              { title: "Growth Mindset", desc: "Ready to learn, fail, and build", icon: "🧠" },
+            ].map((req, idx) => (
+              <div key={idx} className="p-6 border border-gray-100 rounded-2xl shadow-sm hover:border-yellow-500 transition-colors group">
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform inline-block">{req.icon}</div>
+                <h3 className="font-bold text-blue-900 text-lg">{req.title}</h3>
+                <p className="text-gray-500 text-sm mt-1">{req.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* --- INSTRUCTOR SECTION --- */}
-      <section id="instructor" className="py-20 bg-white">
+      <section id="instructor" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-blue-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/3 h-full min-h-[400px]">
@@ -209,7 +239,7 @@ const App = () => {
       </section>
 
       {/* --- PRICING SECTION --- */}
-      <section id="pricing" className="py-20 bg-gray-50 text-center">
+      <section id="pricing" className="py-20 bg-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Affordable Pricing</h2>
           <p className="text-gray-600 mb-12">Invest in yourself for the price of a dinner out.</p>
