@@ -133,9 +133,9 @@ const App = () => {
       {/* --- ABOUT SECTION --- */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">Master the Skills of the Future</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">The Ultimate Bootcamp for the Modern Digital Economy.</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-          Zero experience? No problem. This bootcamp is your fast track to the digital workforce. We’ve bridged the gap between theory and industry reality, combining <strong>Web Development, Digital Marketing,</strong> and <strong>AI</strong> into one powerhouse curriculum. Stop wondering 'how' and start building 'now' with real-world projects designed to turn beginners into digital professionals.
+          Zero experience? No problem. This bootcamp is your fast track to the digital workforce, specifically designed to bridge the gap between theory and industry reality by combining<strong> Web Development, Digital Marketing,</strong>  and <strong>AI </strong> into one powerhouse curriculum. In today’s economy, a business’s website is its 24/7 storefront, making frontend development an essential foundation; however, a great site is only as valuable as the traffic it attracts. That is why we integrate digital marketing directly into our training, teaching you not just how to build, but how to market your skills and drive real-world results for clients. To ensure you stay ahead of the curve, we incorporate Artificial Intelligence to help you create automated workflows and "smart" features that make your development process 10x more efficient. You won’t just be a developer—you’ll be a high-value solutions provider who understands the essence of business growth. Stop wondering "how" and start building "now" with real-world projects designed to turn beginners into industry-ready digital professionals.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
